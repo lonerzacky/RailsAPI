@@ -45,7 +45,7 @@ class UserController < ApplicationController
   end
 
   def delete
-    @sys_user = User.find_by(sysuser_id: params[:sysuser_id])
+    @sys_user = SysUser.find_by(sysuser_id: params[:sysuser_id])
     @sys_user.destroy
     give_response("00", "HAPUS USER SUKSES")
   end
