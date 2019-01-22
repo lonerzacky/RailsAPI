@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get '/getRModul' => 'rmodul#index'
   post '/insertRModul' => 'rmodul#create'
   post '/deleteRModul' => 'rmodul#delete'
+  post '/verifyLogin' => 'auth#verify_login'
 end
