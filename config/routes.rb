@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   post '/insertRModul' => 'rmodul#create'
   post '/deleteRModul' => 'rmodul#delete'
   post '/verifyLogin' => 'auth#verify_login'
+  post '/changePassword' => 'auth#change_password'
 end

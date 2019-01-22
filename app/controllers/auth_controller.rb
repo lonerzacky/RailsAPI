@@ -16,7 +16,17 @@ class AuthController < ApplicationController
   end
 
   def change_password
-
+    sysuser_id = params[:sysuser_id]
+    old_password_from_data = get_old_password(sysuser_id)
+    password_lama = create_hash(params[:password_lama])
+    password_baru = create_hash(params[:password_baru])
+    if password_lama == old_password_from_data
+      @sys_user = SysUser.find_by(sysuser_id: params[:sysuser_id])
+      @sys_user.update(sysuser_passw: password_baru)
+      give_response("00", "GANTI PASSWORD SUKSES")
+    else
+      give_response("01", "PASSWORD LAMA TIDAK SAMA")
+    end
   end
 
 end
