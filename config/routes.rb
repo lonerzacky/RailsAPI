@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get '/getUser' => 'user#index'
   post '/insertUser' => 'user#create'
   put '/updateUser/:sysuser_id' => 'user#update'
-  put '/deleteUser/:sysuser_id' => 'user#delete'
+  delete '/deleteUser/:sysuser_id' => 'user#delete'
 end
