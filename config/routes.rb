@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   post '/insertRole' => 'role#create'
   put '/updateRole/:sysrole_kode' => 'role#update'
   delete '/deleteRole/:sysrole_kode' => 'role#delete'
+  get '/getModul' => 'modul#index'
+  post '/insertModul' => 'modul#create'
+  put '/updateModul/:sysmodul_kode' => 'modul#update'
+  delete '/deleteModul/:sysmodul_kode' => 'modul#delete'
 end
