@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post '/insertUser' => 'user#create'
   put '/updateUser/:sysuser_id' => 'user#update'
   delete '/deleteUser/:sysuser_id' => 'user#delete'
+  get '/getRole' => 'role#index'
 end
