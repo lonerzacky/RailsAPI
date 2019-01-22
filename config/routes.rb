@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   put '/updateUser/:sysuser_id' => 'user#update'
   delete '/deleteUser/:sysuser_id' => 'user#delete'
   get '/getRole' => 'role#index'
+  post '/insertRole' => 'role#create'
+  put '/updateRole/:sysrole_kode' => 'role#update'
+  delete '/deleteRole/:sysrole_kode' => 'role#delete'
 end
