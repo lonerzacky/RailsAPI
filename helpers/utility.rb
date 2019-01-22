@@ -1,9 +1,18 @@
+require 'json'
+
 def give_response(response_code, response_message, response_data = '')
-  render json: {
+  response = {
       response_code: response_code,
       response_message: response_message,
       response_data: response_data
-  }, status: 200
+  }
+  if response_code == "00"
+    status = "success"
+  else
+    status = "failed"
+  end
+  create_log(response.to_json, status)
+  render json: response, status: 200
 end
 
 def create_hash(value)

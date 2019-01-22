@@ -10,3 +10,15 @@ def get_old_password(sysuser_id)
   query = SysUser.select('sysuser_passw').where('sysuser_id= ? ', sysuser_id)
   @result = query.first.sysuser_passw
 end
+
+def create_log(response, status)
+  uri = request.original_url
+  method = request.method
+  params = request.POST.inspect
+  ip_address = request.remote_ip
+  request_time = Time.now
+  @logservice = Logservice.create(uri: uri, method: method, params: params,
+                                  ip_address: ip_address, request_time: request_time,
+                                  response: response, status: status)
+
+end
