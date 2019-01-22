@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'composite_primary_keys'
 class SysRmodul < ApplicationRecord
   self.table_name = 'sys_rmodul'
