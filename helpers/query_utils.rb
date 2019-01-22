@@ -14,10 +14,10 @@ end
 def create_log(response, status)
   uri = request.original_url
   method = request.method
-  params = request.POST.inspect
+  params = request.POST
   ip_address = request.remote_ip
   request_time = Time.now
-  @logservice = Logservice.create(uri: uri, method: method, params: params,
+  @logservice = Logservice.create(uri: uri, method: method, params: params.to_json,
                                   ip_address: ip_address, request_time: request_time,
                                   response: response, status: status)
 
