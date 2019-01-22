@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   post '/insertModul' => 'modul#create'
   put '/updateModul/:sysmodul_kode' => 'modul#update'
   delete '/deleteModul/:sysmodul_kode' => 'modul#delete'
+  get '/getRModul' => 'rmodul#index'
+  post '/insertRModul' => 'rmodul#create'
+  post '/deleteRModul' => 'rmodul#delete'
 end

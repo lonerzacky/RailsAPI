@@ -47,6 +47,8 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
+    composite_primary_keys (11.1.0)
+      activerecord (~> 5.2.1)
     concurrent-ruby (1.1.4)
     crass (1.0.4)
     erubi (1.8.0)
@@ -123,6 +125,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
+  composite_primary_keys (~> 11.1)
   mysql2 (>= 0.4.4, < 0.6.0)
   puma (~> 3.11)
   rails (~> 5.2.2)
