@@ -17,7 +17,7 @@ class UserController < ApplicationController
     sysuser_id = params[:sysuser_id]
     sysrole_kode = params[:sysrole_kode]
     sysuser_nama = params[:sysuser_nama]
-    sysuser_passw = params[:sysuser_passw]
+    sysuser_passw = create_hash(params[:sysuser_passw])
     sysuser_namalengkap = params[:sysuser_namalengkap]
     sysuser_email = params[:sysuser_email]
     @sys_user = SysUser.create(sysuser_id: sysuser_id,
