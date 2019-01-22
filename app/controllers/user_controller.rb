@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require './helpers/utility'
 class UserController < ApplicationController
-
   def index
     @sys_user = SysUser.select('sysuser_id', 'sys_role.sysrole_kode',
                                'sys_role.sysrole_nama', 'sysuser_nama',
                                'sysuser_namalengkap', 'sysuser_email')
-                    .joins('INNER JOIN sys_role ON sys_role.sysrole_kode=sys_user.sysrole_kode')
+                       .joins('INNER JOIN sys_role ON sys_role.sysrole_kode=sys_user.sysrole_kode')
     if @sys_user
       give_response('00', 'GET USER SUKSES', @sys_user)
     else
@@ -27,9 +28,9 @@ class UserController < ApplicationController
                                sysuser_namalengkap: sysuser_namalengkap,
                                sysuser_email: sysuser_email)
     if @sys_user
-      give_response("00", "INSERT USER SUKSES", @sys_user)
+      give_response('00', 'INSERT USER SUKSES', @sys_user)
     else
-      give_response("01", "INSERT USER GAGAL")
+      give_response('01', 'INSERT USER GAGAL')
     end
   end
 
@@ -41,13 +42,12 @@ class UserController < ApplicationController
     @sys_user = SysUser.find_by(sysuser_id: params[:sysuser_id])
     @sys_user.update(sysrole_kode: sysrole_kode, sysuser_nama: sysuser_nama,
                      sysuser_namalengkap: sysuser_namalengkap, sysuser_email: sysuser_email)
-    give_response("00", "UPDATE USER SUKSES")
+    give_response('00', 'UPDATE USER SUKSES')
   end
 
   def delete
     @sys_user = SysUser.find_by(sysuser_id: params[:sysuser_id])
     @sys_user.destroy
-    give_response("00", "HAPUS USER SUKSES")
+    give_response('00', 'HAPUS USER SUKSES')
   end
-
 end
